@@ -164,17 +164,21 @@ export interface Media {
  */
 export interface Project {
   id: string;
+  /**
+   * Project name — must be 3-100 characters.
+   */
   title: string;
+  /**
+   * URL-friendly ID (auto-generated if left empty).
+   */
   slug?: string | null;
   description?: string | null;
   featuredImage?: (string | null) | Media;
   url?: string | null;
-  techStack?:
-    | {
-        tech: string;
-        id?: string | null;
-      }[]
-    | null;
+  techStack: {
+    tech: string;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
